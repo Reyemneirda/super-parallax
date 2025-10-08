@@ -1,0 +1,31 @@
+{
+  "name": "super-parallax",
+  "version": "1.0.0",
+  "description": "A complex multi-layer parallax effect component that follows scroll and mouse movement",
+  "main": "dist/super-parallax.js",
+  "module": "src/super-parallax.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "npm run build"
+  },
+  "keywords": [
+    "parallax",
+    "scroll",
+    "mouse",
+    "animation",
+    "layers",
+    "depth",
+    "2d",
+    "effects"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/super-parallax.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/super-parallax/issues"
+  },
+  "homepage": "https://github.com/yourusername/super-parallax#readme"
+}
