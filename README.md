@@ -3,12 +3,14 @@
 A lightweight JavaScript library for creating complex multi-layer parallax effects that respond to both scroll and mouse movement. Inspired by classic 2D video games, SuperParallax creates stunning depth effects in your web projects.
 
 **Two versions available:**
+
 - **SuperParallax** (2D): Zero dependencies, pure vanilla JavaScript
 - **SuperParallax3D**: True 3D effects with Three.js and WebGL
 
 ## ✨ Features
 
 ### SuperParallax (2D)
+
 - 🎯 **Multi-layer parallax**: Support for unlimited parallax layers
 - 🖱️ **Mouse tracking**: Follows mouse movement for interactive depth
 - 📜 **Scroll effects**: Smooth parallax on scroll
@@ -19,6 +21,7 @@ A lightweight JavaScript library for creating complex multi-layer parallax effec
 - 📱 **Responsive**: Automatically adapts to window resizing
 
 ### SuperParallax3D (3D)
+
 - 🌐 **WebGL rendering**: True 3D positioning with Three.js
 - 📷 **Camera movement**: Camera rotates based on mouse position
 - 🔄 **Layer rotation**: Adds depth through subtle 3D rotation
@@ -31,7 +34,7 @@ A lightweight JavaScript library for creating complex multi-layer parallax effec
 ### From GitHub (npm)
 
 ```bash
-npm install github:yourusername/super-parallax
+npm install github:Reyemneirda/super-parallax
 ```
 
 ### Direct Download
@@ -50,17 +53,17 @@ Download `super-parallax.js` and include it in your HTML:
 <div class="parallax-container">
   <!-- Background layer (moves slowly) -->
   <div data-parallax-layer data-parallax-depth="0.3">
-    <img src="background.png" alt="Background">
+    <img src="background.png" alt="Background" />
   </div>
 
   <!-- Middle layer -->
   <div data-parallax-layer data-parallax-depth="0.6">
-    <img src="midground.png" alt="Midground">
+    <img src="midground.png" alt="Midground" />
   </div>
 
   <!-- Foreground layer (moves quickly) -->
   <div data-parallax-layer data-parallax-depth="1.2">
-    <img src="foreground.png" alt="Foreground">
+    <img src="foreground.png" alt="Foreground" />
   </div>
 
   <!-- Static content (no parallax) -->
@@ -73,10 +76,10 @@ Download `super-parallax.js` and include it in your HTML:
 ### 2. Initialize SuperParallax
 
 ```javascript
-const parallax = new SuperParallax('.parallax-container', {
+const parallax = new SuperParallax(".parallax-container", {
   scrollMultiplier: 1,
   mouseMultiplier: 0.5,
-  smoothing: 0.1
+  smoothing: 0.1,
 });
 ```
 
@@ -103,36 +106,38 @@ That's it! 🎉
 ### Constructor
 
 ```javascript
-new SuperParallax(container, options)
+new SuperParallax(container, options);
 ```
 
 **Parameters:**
+
 - `container` (string | HTMLElement): CSS selector or DOM element
 - `options` (object): Configuration options (see below)
 
 ### Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `scrollMultiplier` | number | `1` | Overall scroll effect intensity |
-| `mouseMultiplier` | number | `0.5` | Overall mouse effect intensity |
-| `smoothing` | number | `0.1` | Smoothing factor (0-1, lower = smoother) |
-| `centerMouse` | boolean | `true` | Center mouse coordinates (-1 to 1) |
-| `resetOnMouseLeave` | boolean | `true` | Reset mouse position when leaving container |
+| Option              | Type    | Default | Description                                 |
+| ------------------- | ------- | ------- | ------------------------------------------- |
+| `scrollMultiplier`  | number  | `1`     | Overall scroll effect intensity             |
+| `mouseMultiplier`   | number  | `0.5`   | Overall mouse effect intensity              |
+| `smoothing`         | number  | `0.1`   | Smoothing factor (0-1, lower = smoother)    |
+| `centerMouse`       | boolean | `true`  | Center mouse coordinates (-1 to 1)          |
+| `resetOnMouseLeave` | boolean | `true`  | Reset mouse position when leaving container |
 
 ### HTML Attributes
 
-| Attribute | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `data-parallax-layer` | - | required | Marks element as a parallax layer |
-| `data-parallax-depth` | number | `1` | Layer depth (lower = slower) |
-| `data-parallax-scroll` | number | `depth` | Custom scroll speed |
-| `data-parallax-mouse` | number | `depth` | Custom mouse speed |
-| `data-parallax-axis` | string | `'both'` | Movement axis: `'x'`, `'y'`, or `'both'` |
+| Attribute              | Type   | Default  | Description                              |
+| ---------------------- | ------ | -------- | ---------------------------------------- |
+| `data-parallax-layer`  | -      | required | Marks element as a parallax layer        |
+| `data-parallax-depth`  | number | `1`      | Layer depth (lower = slower)             |
+| `data-parallax-scroll` | number | `depth`  | Custom scroll speed                      |
+| `data-parallax-mouse`  | number | `depth`  | Custom mouse speed                       |
+| `data-parallax-axis`   | string | `'both'` | Movement axis: `'x'`, `'y'`, or `'both'` |
 
 ### Methods
 
 #### `start()`
+
 Start the parallax animation.
 
 ```javascript
@@ -140,6 +145,7 @@ parallax.start();
 ```
 
 #### `stop()`
+
 Stop the parallax animation.
 
 ```javascript
@@ -147,6 +153,7 @@ parallax.stop();
 ```
 
 #### `destroy()`
+
 Stop animation, remove event listeners, and reset transforms.
 
 ```javascript
@@ -154,6 +161,7 @@ parallax.destroy();
 ```
 
 #### `addLayer(element, depth, scrollSpeed, mouseSpeed)`
+
 Dynamically add a new parallax layer.
 
 ```javascript
@@ -161,6 +169,7 @@ const layer = parallax.addLayer(element, 0.5, 0.5, 0.7);
 ```
 
 #### `removeLayer(element)`
+
 Remove a parallax layer.
 
 ```javascript
@@ -168,16 +177,18 @@ parallax.removeLayer(element);
 ```
 
 #### `setOptions(options)`
+
 Update options on the fly.
 
 ```javascript
 parallax.setOptions({
   smoothing: 0.2,
-  mouseMultiplier: 0.8
+  mouseMultiplier: 0.8,
 });
 ```
 
 #### `updateBounds()`
+
 Manually update container boundaries (called automatically on resize).
 
 ```javascript
@@ -189,9 +200,7 @@ parallax.updateBounds();
 ### Different Speeds for Scroll and Mouse
 
 ```html
-<div data-parallax-layer
-     data-parallax-scroll="0.3"
-     data-parallax-mouse="0.8">
+<div data-parallax-layer data-parallax-scroll="0.3" data-parallax-mouse="0.8">
   Moves slowly on scroll, quickly with mouse
 </div>
 ```
@@ -199,9 +208,7 @@ parallax.updateBounds();
 ### Horizontal-Only Movement
 
 ```html
-<div data-parallax-layer
-     data-parallax-depth="0.5"
-     data-parallax-axis="x">
+<div data-parallax-layer data-parallax-depth="0.5" data-parallax-axis="x">
   Only moves horizontally
 </div>
 ```
@@ -209,12 +216,12 @@ parallax.updateBounds();
 ### Advanced Configuration
 
 ```javascript
-const parallax = new SuperParallax('.hero', {
-  scrollMultiplier: 1.5,      // More intense scroll
-  mouseMultiplier: 0.3,       // Subtle mouse movement
-  smoothing: 0.05,            // Very smooth
-  centerMouse: true,          // Centered coordinates
-  resetOnMouseLeave: false    // Keep position on mouse leave
+const parallax = new SuperParallax(".hero", {
+  scrollMultiplier: 1.5, // More intense scroll
+  mouseMultiplier: 0.3, // Subtle mouse movement
+  smoothing: 0.05, // Very smooth
+  centerMouse: true, // Centered coordinates
+  resetOnMouseLeave: false, // Keep position on mouse leave
 });
 ```
 
@@ -222,9 +229,9 @@ const parallax = new SuperParallax('.hero', {
 
 ```javascript
 // Add a new layer programmatically
-const newElement = document.createElement('div');
+const newElement = document.createElement("div");
 newElement.innerHTML = '<img src="star.png">';
-document.querySelector('.parallax-container').appendChild(newElement);
+document.querySelector(".parallax-container").appendChild(newElement);
 
 parallax.addLayer(newElement, 1.5); // depth of 1.5
 
@@ -299,28 +306,29 @@ Include Three.js from CDN (to keep it simple with minimal dependencies):
 ### Usage
 
 ```javascript
-const parallax3d = new SuperParallax3D('.parallax-container', {
+const parallax3d = new SuperParallax3D(".parallax-container", {
   scrollMultiplier: 0.5,
   mouseMultiplier: 2,
   smoothing: 0.08,
   fov: 75,
-  cameraZ: 5
+  cameraZ: 5,
 });
 ```
 
 ### 3D Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `scrollMultiplier` | number | `0.5` | Scroll effect intensity |
-| `mouseMultiplier` | number | `2` | Camera movement intensity |
-| `smoothing` | number | `0.08` | Animation smoothness (0-1) |
-| `fov` | number | `75` | Camera field of view |
-| `cameraZ` | number | `5` | Camera distance from scene |
+| Option             | Type   | Default | Description                |
+| ------------------ | ------ | ------- | -------------------------- |
+| `scrollMultiplier` | number | `0.5`   | Scroll effect intensity    |
+| `mouseMultiplier`  | number | `2`     | Camera movement intensity  |
+| `smoothing`        | number | `0.08`  | Animation smoothness (0-1) |
+| `fov`              | number | `75`    | Camera field of view       |
+| `cameraZ`          | number | `5`     | Camera distance from scene |
 
 ### When to Use 3D vs 2D
 
 **Use 2D (SuperParallax)** when:
+
 - You want zero dependencies
 - File size matters
 - You need maximum browser compatibility
@@ -328,6 +336,7 @@ const parallax3d = new SuperParallax3D('.parallax-container', {
 - **Recommended for 95% of use cases**
 
 **Use 3D (SuperParallax3D)** when:
+
 - You want true 3D camera movement
 - WebGL effects enhance your design
 - You're already using Three.js
@@ -345,6 +354,7 @@ const parallax3d = new SuperParallax3D('.parallax-container', {
 ## 🌟 Inspiration
 
 Inspired by classic games like:
+
 - Sonic the Hedgehog
 - Super Mario Bros
 - Rayman

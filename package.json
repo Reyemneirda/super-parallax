@@ -1,6 +1,6 @@
 {
   "name": "super-parallax",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A complex multi-layer parallax effect component that follows scroll and mouse movement",
   "main": "dist/super-parallax.js",
   "module": "src/super-parallax.js",
@@ -22,10 +22,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/super-parallax.git"
+    "url": "git+https://github.com/Reyemneirda/super-parallax.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/super-parallax/issues"
+    "url": "https://github.com/Reyemneirda/super-parallax/issues"
   },
-  "homepage": "https://github.com/yourusername/super-parallax#readme"
+  "homepage": "https://github.com/Reyemneirda/super-parallax#readme"
 }
